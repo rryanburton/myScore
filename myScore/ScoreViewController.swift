@@ -8,15 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ScoreViewController: UIViewController {
                             
     @IBOutlet var lblHits: UILabel
     @IBOutlet var lblPutts: UILabel
     @IBOutlet var lblPenalty: UILabel
+    @IBOutlet var lblHole: UILabel
     
     @IBOutlet var stepperHits: UIStepper
     @IBOutlet var stepperPutts: UIStepper
     @IBOutlet var stepperPenalties: UIStepper
+    
+    var hole: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,8 @@ class ViewController: UIViewController {
         lblHits.text = "0"
         lblPutts.text = "0"
         lblPenalty.text = "0"
+        
+        lblHole.text = "Loch Nr. \(hole)"
         
     }
 
@@ -40,7 +45,17 @@ class ViewController: UIViewController {
     }
 
     @IBAction func updatePutts(sender: AnyObject) {
+        
+        var putts = Int(stepperPutts.value)
+        var strokes = Int(stepperHits.value)
+        
         lblPutts.text = Int(stepperPutts.value).description
+        if (putts >= strokes) {
+            strokes = ++putts
+            stepperHits.value = Double(strokes)
+            lblHits.text = Int(stepperHits.value).description
+            
+        }
     }
     
     @IBAction func updatePenalties(sender: AnyObject) {
