@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01163AF7197C534100FBD423 /* ScorePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01163AF5197C534100FBD423 /* ScorePageViewController.swift */; };
+		01163AFA197C68B300FBD423 /* ScorePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01163AF9197C68B300FBD423 /* ScorePageViewController.swift */; };
 		011CCF5F197BEF7F0031EB86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011CCF5E197BEF7F0031EB86 /* AppDelegate.swift */; };
 		011CCF62197BEF7F0031EB86 /* myScore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 011CCF60197BEF7F0031EB86 /* myScore.xcdatamodeld */; };
 		011CCF64197BEF7F0031EB86 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011CCF63197BEF7F0031EB86 /* ScoreViewController.swift */; };
@@ -27,7 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01163AF5197C534100FBD423 /* ScorePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScorePageViewController.swift; path = ../ScorePageViewController.swift; sourceTree = "<group>"; };
+		01163AF9197C68B300FBD423 /* ScorePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorePageViewController.swift; sourceTree = "<group>"; };
 		011CCF59197BEF7F0031EB86 /* myScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		011CCF5D197BEF7F0031EB86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		011CCF5E197BEF7F0031EB86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,8 +79,8 @@
 		011CCF5B197BEF7F0031EB86 /* myScore */ = {
 			isa = PBXGroup;
 			children = (
+				01163AF9197C68B300FBD423 /* ScorePageViewController.swift */,
 				011CCF5E197BEF7F0031EB86 /* AppDelegate.swift */,
-				01163AF5197C534100FBD423 /* ScorePageViewController.swift */,
 				011CCF63197BEF7F0031EB86 /* ScoreViewController.swift */,
 				011CCF65197BEF7F0031EB86 /* Main.storyboard */,
 				011CCF68197BEF7F0031EB86 /* Images.xcassets */,
@@ -214,8 +214,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01163AF7197C534100FBD423 /* ScorePageViewController.swift in Sources */,
 				011CCF64197BEF7F0031EB86 /* ScoreViewController.swift in Sources */,
+				01163AFA197C68B300FBD423 /* ScorePageViewController.swift in Sources */,
 				011CCF62197BEF7F0031EB86 /* myScore.xcdatamodeld in Sources */,
 				011CCF5F197BEF7F0031EB86 /* AppDelegate.swift in Sources */,
 			);
