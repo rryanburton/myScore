@@ -10,15 +10,14 @@ import UIKit
 
 class ScorePageViewController: UIPageViewController, UIPageViewControllerDataSource {
     
-    let MIN = 1
-    let MAX = 9
+    let course = manager.getCourseByName("Ebersberg")
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         self.dataSource = self
         
-        var viewControllers = [viewControllerAtIndex(MIN)] as NSArray
+        var viewControllers = [viewControllerAtIndex(1)] as NSArray
         setViewControllers(viewControllers, direction: .Forward, animated: false, completion: nil)
 
         
@@ -28,8 +27,8 @@ class ScorePageViewController: UIPageViewController, UIPageViewControllerDataSou
         
         var before = viewController as ScoreViewController
         var currentController: ScoreViewController?
-        if (before.hole > MIN) {
-            var current = before.hole! - 1
+        if (before.hole?.number > 1) {
+            var current = before.hole!.number - 1
             currentController = viewControllerAtIndex(current)
         }
         return currentController
@@ -40,27 +39,26 @@ class ScorePageViewController: UIPageViewController, UIPageViewControllerDataSou
         
         var after = viewController as ScoreViewController
         var currentController: ScoreViewController?
-        if (after.hole < MAX) {
-            var current = after.hole! + 1
+        if (after.hole?.number < course.getNumberOfHoles()) {
+            var current = after.hole!.number + 1
             currentController = viewControllerAtIndex(current)
         }
         return currentController
     }
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController!) -> Int {
-       return MAX
+       return course.getNumberOfHoles()
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController!) -> Int {
         var currentController = pageViewController.viewControllers[0] as ScoreViewController
-        return currentController.hole! - 1
+        return currentController.hole!.number - 1
     }
     
     func viewControllerAtIndex(index: Int) -> ScoreViewController {
         
         var currentController = self.storyboard.instantiateViewControllerWithIdentifier("scoreViewController") as ScoreViewController
-        currentController.hole = index
-        
+        currentController.hole = course.getHoleByNumber(index)
         return currentController
         
     }

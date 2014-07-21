@@ -14,12 +14,13 @@ class ScoreViewController: UIViewController {
     @IBOutlet var lblPutts: UILabel
     @IBOutlet var lblPenalty: UILabel
     @IBOutlet var lblHole: UILabel
+    @IBOutlet var lblPar: UILabel
     
     @IBOutlet var stepperHits: UIStepper
     @IBOutlet var stepperPutts: UIStepper
     @IBOutlet var stepperPenalties: UIStepper
     
-    var hole: Int?
+    var hole: Hole?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,8 @@ class ScoreViewController: UIViewController {
         lblPutts.text = "0"
         lblPenalty.text = "0"
         
-        lblHole.text = "Loch Nr. \(hole)"
+        lblHole.text = "Loch Nr. \(hole?.number)"
+        lblPar.text = "Par: \(hole?.par) Länge: \(hole?.length)"
         
     }
 

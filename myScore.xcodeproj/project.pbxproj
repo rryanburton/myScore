@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		01163AFA197C68B300FBD423 /* ScorePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01163AF9197C68B300FBD423 /* ScorePageViewController.swift */; };
+		01163AFC197D9F6D00FBD423 /* Hole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01163AFB197D9F6D00FBD423 /* Hole.swift */; };
+		01163AFE197DA16F00FBD423 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01163AFD197DA16F00FBD423 /* Course.swift */; };
+		01163B00197DA1DC00FBD423 /* CourseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01163AFF197DA1DC00FBD423 /* CourseManager.swift */; };
 		011CCF5F197BEF7F0031EB86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011CCF5E197BEF7F0031EB86 /* AppDelegate.swift */; };
 		011CCF62197BEF7F0031EB86 /* myScore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 011CCF60197BEF7F0031EB86 /* myScore.xcdatamodeld */; };
 		011CCF64197BEF7F0031EB86 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011CCF63197BEF7F0031EB86 /* ScoreViewController.swift */; };
@@ -28,6 +31,9 @@
 
 /* Begin PBXFileReference section */
 		01163AF9197C68B300FBD423 /* ScorePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorePageViewController.swift; sourceTree = "<group>"; };
+		01163AFB197D9F6D00FBD423 /* Hole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hole.swift; sourceTree = "<group>"; };
+		01163AFD197DA16F00FBD423 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		01163AFF197DA1DC00FBD423 /* CourseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseManager.swift; sourceTree = "<group>"; };
 		011CCF59197BEF7F0031EB86 /* myScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		011CCF5D197BEF7F0031EB86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		011CCF5E197BEF7F0031EB86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +64,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01163B01197DA7B500FBD423 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				01163AFB197D9F6D00FBD423 /* Hole.swift */,
+				01163AFD197DA16F00FBD423 /* Course.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		011CCF50197BEF7E0031EB86 = {
 			isa = PBXGroup;
 			children = (
@@ -79,13 +94,15 @@
 		011CCF5B197BEF7F0031EB86 /* myScore */ = {
 			isa = PBXGroup;
 			children = (
-				01163AF9197C68B300FBD423 /* ScorePageViewController.swift */,
 				011CCF5E197BEF7F0031EB86 /* AppDelegate.swift */,
+				01163AF9197C68B300FBD423 /* ScorePageViewController.swift */,
 				011CCF63197BEF7F0031EB86 /* ScoreViewController.swift */,
 				011CCF65197BEF7F0031EB86 /* Main.storyboard */,
 				011CCF68197BEF7F0031EB86 /* Images.xcassets */,
 				011CCF60197BEF7F0031EB86 /* myScore.xcdatamodeld */,
 				011CCF5C197BEF7F0031EB86 /* Supporting Files */,
+				01163B01197DA7B500FBD423 /* Model */,
+				01163AFF197DA1DC00FBD423 /* CourseManager.swift */,
 			);
 			path = myScore;
 			sourceTree = "<group>";
@@ -214,8 +231,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01163AFE197DA16F00FBD423 /* Course.swift in Sources */,
 				011CCF64197BEF7F0031EB86 /* ScoreViewController.swift in Sources */,
 				01163AFA197C68B300FBD423 /* ScorePageViewController.swift in Sources */,
+				01163AFC197D9F6D00FBD423 /* Hole.swift in Sources */,
+				01163B00197DA1DC00FBD423 /* CourseManager.swift in Sources */,
 				011CCF62197BEF7F0031EB86 /* myScore.xcdatamodeld in Sources */,
 				011CCF5F197BEF7F0031EB86 /* AppDelegate.swift in Sources */,
 			);

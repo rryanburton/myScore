@@ -90,12 +90,20 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Par" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FJ1-9a-fwm">
+                                <rect key="frame" x="20" y="74" width="280" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="lblHits" destination="Bpk-YS-bqZ" id="rSk-v7-s9p"/>
                         <outlet property="lblHole" destination="L1p-Tl-QuN" id="PCC-eb-kgD"/>
+                        <outlet property="lblPar" destination="FJ1-9a-fwm" id="HKt-UX-uIi"/>
                         <outlet property="lblPenalty" destination="oh3-xd-ulj" id="as7-mw-sAp"/>
                         <outlet property="lblPutts" destination="JPQ-JN-ZjU" id="JM6-11-ftx"/>
                         <outlet property="stepperHits" destination="ZeJ-sN-FCW" id="SWK-Iq-jWP"/>
