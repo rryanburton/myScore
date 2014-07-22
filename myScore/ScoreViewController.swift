@@ -30,6 +30,10 @@ class ScoreViewController: UIViewController {
         lblPutts.text = "\(hole.score.putts)"
         lblPenalty.text = "\(hole.score.penalties)"
         
+        stepperHits.value = Double(hole.score.strokes)
+        stepperPutts.value = Double(hole.score.putts)
+        stepperPenalties.value = Double(hole.score.penalties)
+        
         lblHole.text = "Loch Nr. \(hole.number)"
         lblPar.text = "Par: \(hole.par) Länge: \(hole.length)"
         
