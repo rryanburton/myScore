@@ -10,15 +10,15 @@ import UIKit
 
 class ScoreViewController: UIViewController {
                             
-    @IBOutlet var lblHits: UILabel
-    @IBOutlet var lblPutts: UILabel
-    @IBOutlet var lblPenalty: UILabel
-    @IBOutlet var lblHole: UILabel
-    @IBOutlet var lblPar: UILabel
+    @IBOutlet weak var lblHits: UILabel!
+    @IBOutlet weak var lblPutts: UILabel!
+    @IBOutlet weak var lblPenalty: UILabel!
+    @IBOutlet weak var lblHole: UILabel!
+    @IBOutlet weak var lblPar: UILabel!
     
-    @IBOutlet var stepperHits: UIStepper
-    @IBOutlet var stepperPutts: UIStepper
-    @IBOutlet var stepperPenalties: UIStepper
+    @IBOutlet weak var stepperHits: UIStepper!
+    @IBOutlet weak var stepperPutts: UIStepper!
+    @IBOutlet weak var stepperPenalties: UIStepper!
     
     var hole: Hole?
     
@@ -30,8 +30,8 @@ class ScoreViewController: UIViewController {
         lblPutts.text = "0"
         lblPenalty.text = "0"
         
-        lblHole.text = "Loch Nr. \(hole?.number)"
-        lblPar.text = "Par: \(hole?.par) Länge: \(hole?.length)"
+        lblHole.text = "Loch Nr. \(hole!.number)"
+        lblPar.text = "Par: \(hole!.par) Länge: \(hole!.length)"
         
     }
 
