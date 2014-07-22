@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Frank von Eitzen. All rights reserved.
 //
 
-struct Hole {
+class Hole {
     
     var number:Int
     var par:Int

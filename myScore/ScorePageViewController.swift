@@ -63,4 +63,10 @@ class ScorePageViewController: UIPageViewController, UIPageViewControllerDataSou
         
     }
     
+    func updateScores(controller: ScoreViewController) {
+        
+        println(controller.hole.score.strokes)
+        
+    }
+    
 }

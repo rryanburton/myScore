@@ -49,20 +49,15 @@ class ScoreViewController: UIViewController {
 
     @IBAction func updatePutts(sender: AnyObject) {
         
-        var putts = Int(stepperPutts.value)
-        var strokes = Int(stepperHits.value)
-        
-        lblPutts.text = Int(stepperPutts.value).description
-        if (putts >= strokes) {
-            strokes = ++putts
-            stepperHits.value = Double(strokes)
-            lblHits.text = Int(stepperHits.value).description
-            
-        }
+        hole.score.putts = Int(stepperPutts.value)
+        lblPutts.text = hole.score.putts.description
     }
     
     @IBAction func updatePenalties(sender: AnyObject) {
-        lblPenalty.text = Int(stepperPenalties.value).description
+        
+        hole.score.penalties = Int(stepperPenalties.value)
+        lblPenalty.text = hole.score.penalties.description
+        
     }
 }
 
