@@ -27,8 +27,8 @@ class ScorePageViewController: UIPageViewController, UIPageViewControllerDataSou
         
         var before = viewController as ScoreViewController
         var currentController: ScoreViewController?
-        if (before.hole?.number > 1) {
-            var current = before.hole!.number - 1
+        if (before.hole.number > 1) {
+            var current = before.hole.number - 1
             currentController = viewControllerAtIndex(current)
         }
         return currentController
@@ -39,8 +39,8 @@ class ScorePageViewController: UIPageViewController, UIPageViewControllerDataSou
         
         var after = viewController as ScoreViewController
         var currentController: ScoreViewController?
-        if (after.hole?.number < course.getNumberOfHoles()) {
-            var current = after.hole!.number + 1
+        if (after.hole.number < course.getNumberOfHoles()) {
+            var current = after.hole.number + 1
             currentController = viewControllerAtIndex(current)
         }
         return currentController
@@ -52,7 +52,7 @@ class ScorePageViewController: UIPageViewController, UIPageViewControllerDataSou
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController!) -> Int {
         var currentController = pageViewController.viewControllers[0] as ScoreViewController
-        return currentController.hole!.number - 1
+        return currentController.hole.number - 1
     }
     
     func viewControllerAtIndex(index: Int) -> ScoreViewController {

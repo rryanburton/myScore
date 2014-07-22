@@ -12,4 +12,18 @@ struct Hole {
     var par:Int
     var length:Int
     
+    var score = Score()
+    
+    init() {
+        self.number = 0
+        self.par = 0
+        self.length = 0
+    }
+    
+    init(number:Int, par:Int, length:Int) {
+        self.number = number
+        self.par = par
+        self.length = length
+    }
+    
 }
