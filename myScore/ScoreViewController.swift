@@ -15,17 +15,19 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak var lblPenalty: UILabel!
     @IBOutlet weak var lblHole: UILabel!
     @IBOutlet weak var lblPar: UILabel!
+    @IBOutlet weak var lblTotal: UILabel!
     
     @IBOutlet weak var stepperHits: UIStepper!
     @IBOutlet weak var stepperPutts: UIStepper!
     @IBOutlet weak var stepperPenalties: UIStepper!
     
-    var hole = Hole()
+    var hole: Hole!
+    var match: Match!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
    
-        //reset all stepper and lables to 0
         lblHits.text = "\(hole.score.strokes)"
         lblPutts.text = "\(hole.score.putts)"
         lblPenalty.text = "\(hole.score.penalties)"
@@ -37,17 +39,35 @@ class ScoreViewController: UIViewController {
         lblHole.text = "Loch Nr. \(hole.number)"
         lblPar.text = "Par: \(hole.par) Länge: \(hole.length)"
         
+        
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        updateTotalScore()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func updateTotalScore() {
+        lblTotal.text = "Gesamt: \(match.getTotalScore())"
+    }
 
     @IBAction func updateHits(sender: AnyObject) {
         
         hole.score.strokes = Int(stepperHits.value)
         lblHits.text = hole.score.strokes.description
+        if hole.score.strokes <= hole.par {
+            lblHits.textColor = UIColor.greenColor()
+        }
+        else {
+            lblHits.textColor = UIColor.blackColor()
+        }
+        updateTotalScore()
         
     }
 

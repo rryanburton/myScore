@@ -10,7 +10,7 @@ import UIKit
 
 class ScorePageViewController: UIPageViewController, UIPageViewControllerDataSource {
     
-    let course = manager.getCourseByName("Ebersberg")
+    let match = Match(course: manager.getCourseByName("Ebersberg"))
     
     override func viewDidLoad() {
         
@@ -39,7 +39,7 @@ class ScorePageViewController: UIPageViewController, UIPageViewControllerDataSou
         
         var after = viewController as ScoreViewController
         var currentController: ScoreViewController?
-        if (after.hole.number < course.getNumberOfHoles()) {
+        if (after.hole.number < match.course.getNumberOfHoles()) {
             var current = after.hole.number + 1
             currentController = viewControllerAtIndex(current)
         }
@@ -47,7 +47,7 @@ class ScorePageViewController: UIPageViewController, UIPageViewControllerDataSou
     }
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController!) -> Int {
-       return course.getNumberOfHoles()
+       return match.course.getNumberOfHoles()
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController!) -> Int {
@@ -58,7 +58,8 @@ class ScorePageViewController: UIPageViewController, UIPageViewControllerDataSou
     func viewControllerAtIndex(index: Int) -> ScoreViewController {
         
         var currentController = self.storyboard.instantiateViewControllerWithIdentifier("scoreViewController") as ScoreViewController
-        currentController.hole = course.getHoleByNumber(index)
+        currentController.hole = match.course.getHoleByNumber(index)
+        currentController.match = match
         return currentController
         
     }
