@@ -21,6 +21,8 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak var stepperPutts: UIStepper!
     @IBOutlet weak var stepperPenalties: UIStepper!
     
+    @IBOutlet weak var imgAverage: UIImageView!
+    
     var hole: Hole!
     var match: Match!
     
@@ -45,6 +47,8 @@ class ScoreViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        imgAverage.hidden = true
+        updateHitsColor()
         updateTotalScore()
     }
 
@@ -56,18 +60,24 @@ class ScoreViewController: UIViewController {
     func updateTotalScore() {
         lblTotal.text = "Gesamt: \(match.getTotalScore())"
     }
-
-    @IBAction func updateHits(sender: AnyObject) {
-        
-        hole.score.strokes = Int(stepperHits.value)
-        lblHits.text = hole.score.strokes.description
+    
+    func updateHitsColor() {
         if hole.score.strokes <= hole.par {
             lblHits.textColor = UIColor.greenColor()
         }
         else {
             lblHits.textColor = UIColor.blackColor()
         }
+    }
+
+    @IBAction func updateHits(sender: AnyObject) {
+        
+        hole.score.strokes = Int(stepperHits.value)
+        lblHits.text = hole.score.strokes.description
+        updateHitsColor()
         updateTotalScore()
+        imgAverage.hidden = !(hole.score.strokes > hole.average)
+
         
     }
 

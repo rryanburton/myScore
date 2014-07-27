@@ -9,9 +9,15 @@
 class Match {
     
     var course: Course
+    var average:Int
     
     init(course:Course) {
         self.course = course
+        self.average = 0
+        for hole in course.holes {
+            self.average += hole.average
+        }
+
     }
     
     func getTotalScore() -> Int {
