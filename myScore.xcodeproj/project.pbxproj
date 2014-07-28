@@ -16,7 +16,6 @@
 		011CCF64197BEF7F0031EB86 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011CCF63197BEF7F0031EB86 /* ScoreViewController.swift */; };
 		011CCF67197BEF7F0031EB86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 011CCF65197BEF7F0031EB86 /* Main.storyboard */; };
 		011CCF69197BEF7F0031EB86 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 011CCF68197BEF7F0031EB86 /* Images.xcassets */; };
-		011CCF75197BEF7F0031EB86 /* myScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011CCF74197BEF7F0031EB86 /* myScoreTests.swift */; };
 		8F6CCEFB197ED43E00B94FB4 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CCEFA197ED43E00B94FB4 /* Score.swift */; };
 		8F6D1E111980DEF200D53EC7 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6D1E101980DEF200D53EC7 /* Match.swift */; };
 		8F6D1E131981724900D53EC7 /* MatchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6D1E121981724900D53EC7 /* MatchTest.swift */; };
@@ -53,7 +52,6 @@
 		011CCF68197BEF7F0031EB86 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		011CCF6E197BEF7F0031EB86 /* myScoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myScoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		011CCF73197BEF7F0031EB86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		011CCF74197BEF7F0031EB86 /* myScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myScoreTests.swift; sourceTree = "<group>"; };
 		8F6CCEFA197ED43E00B94FB4 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		8F6D1E101980DEF200D53EC7 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		8F6D1E121981724900D53EC7 /* MatchTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchTest.swift; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				8F6D1E121981724900D53EC7 /* MatchTest.swift */,
-				011CCF74197BEF7F0031EB86 /* myScoreTests.swift */,
 				011CCF72197BEF7F0031EB86 /* Supporting Files */,
 			);
 			path = myScoreTests;
@@ -265,7 +262,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				011CCF75197BEF7F0031EB86 /* myScoreTests.swift in Sources */,
 				8F6D1E131981724900D53EC7 /* MatchTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

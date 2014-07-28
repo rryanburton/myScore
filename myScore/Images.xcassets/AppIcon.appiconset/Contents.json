@@ -6,14 +6,15 @@
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "Icon_myScore_80.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "Icon-iOS-myScore_120x120.png",
+      "filename" : "Icon_myScore_120.png",
       "scale" : "2x"
     }
   ],
