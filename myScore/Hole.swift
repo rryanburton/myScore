@@ -29,4 +29,17 @@ class Hole {
         self.average = average
     }
     
+    func getAverageDiff() -> Int {
+        
+        if (score.strokes == 0) {
+            // no socore -> hole does not count
+            return 0
+        }
+        else {
+            // we have a number of strokes -> so calculate
+            var diff = (score.strokes - average)
+            return diff
+        }
+    }
+    
 }

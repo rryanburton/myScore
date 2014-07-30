@@ -16,15 +16,21 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak var lblHole: UILabel!
     @IBOutlet weak var lblPar: UILabel!
     @IBOutlet weak var lblTotal: UILabel!
+    @IBOutlet weak var lblLength: UILabel!
     
     @IBOutlet weak var stepperHits: UIStepper!
     @IBOutlet weak var stepperPutts: UIStepper!
     @IBOutlet weak var stepperPenalties: UIStepper!
     
     @IBOutlet weak var imgAverage: UIImageView!
+    @IBOutlet weak var imgTotalAverage: UIImageView!
     
     var hole: Hole!
     var match: Match!
+    
+    var imgArrowUp = UIImage(named: "Arrow_Up")
+    var imgArrowDown = UIImage(named: "Arrow_Down")
+    var imgArrowSame = UIImage(named: "Arrow_Same")
     
     override func viewDidLoad() {
         
@@ -38,18 +44,16 @@ class ScoreViewController: UIViewController {
         stepperPutts.value = Double(hole.score.putts)
         stepperPenalties.value = Double(hole.score.penalties)
         
-        lblHole.text = "Loch Nr. \(hole.number)"
-        lblPar.text = "Par: \(hole.par) Länge: \(hole.length)"
-        
+        lblHole.text = "Nr. \(hole.number)"
+        lblPar.text = "Par: \(hole.par)"
+        lblLength.text = "Len: \(hole.length)"
         
         
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        imgAverage.hidden = true
-        updateHitsColor()
-        updateTotalScore()
+        updateScore()
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,7 +62,7 @@ class ScoreViewController: UIViewController {
     }
     
     func updateTotalScore() {
-        lblTotal.text = "Gesamt: \(match.getTotalScore())"
+        lblTotal.text = "Ges: \(match.getTotalScore())"
     }
     
     func updateHitsColor() {
@@ -69,14 +73,46 @@ class ScoreViewController: UIViewController {
             lblHits.textColor = UIColor.blackColor()
         }
     }
+    
+    func updateScore() {
+        
+        stepperHits.value = Double(hole.score.strokes)
+        stepperPutts.value = Double(hole.score.putts)
+        stepperPenalties.value = Double(hole.score.penalties)
+        
+        lblHits.text = hole.score.strokes.description
+        lblPutts.text = hole.score.putts.description
+        lblPenalty.text = hole.score.penalties.description
+        
+        //imgAverage.hidden = !(hole.score.strokes > hole.average)
+        switch (hole.score.strokes - hole.average) {
+        case -100...(-1):
+            imgAverage.image = imgArrowUp
+        case 1...100:
+            imgAverage.image = imgArrowDown
+        default:
+            imgAverage.image = imgArrowSame
+        }
+        
+        switch match.getCalculatedAverage() {
+        case -1:
+            imgTotalAverage.image = imgArrowUp
+        case 1:
+            imgTotalAverage.image = imgArrowDown
+        default:
+            imgTotalAverage.image = imgArrowSame
+        }
+        
+        
+        //updateHitsColor()
+        updateTotalScore()
+        
+    }
 
     @IBAction func updateHits(sender: AnyObject) {
         
         hole.score.strokes = Int(stepperHits.value)
-        lblHits.text = hole.score.strokes.description
-        updateHitsColor()
-        updateTotalScore()
-        imgAverage.hidden = !(hole.score.strokes > hole.average)
+        updateScore()
 
         
     }
@@ -84,13 +120,14 @@ class ScoreViewController: UIViewController {
     @IBAction func updatePutts(sender: AnyObject) {
         
         hole.score.putts = Int(stepperPutts.value)
-        lblPutts.text = hole.score.putts.description
+        updateScore()
+        
     }
     
     @IBAction func updatePenalties(sender: AnyObject) {
         
         hole.score.penalties = Int(stepperPenalties.value)
-        lblPenalty.text = hole.score.penalties.description
+        updateScore()
         
     }
 }

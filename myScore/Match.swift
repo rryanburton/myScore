@@ -8,7 +8,7 @@
 
 class Match {
     
-    var course: Course
+    var course:Course!
     var average:Int
     
     init(course:Course) {
@@ -27,6 +27,24 @@ class Match {
             total = total + hole.score.strokes
         }
         return total
+    }
+    
+    func getCalculatedAverage() -> Int {
+        
+        var calcAverage = 0
+        for hole in course.holes {
+            calcAverage += hole.getAverageDiff()
+        }
+        
+        if calcAverage > 0 {
+            return 1
+        } else if calcAverage < 0 {
+            return -1
+        } else {
+            return 0
+        }
+        
+        
     }
     
 }

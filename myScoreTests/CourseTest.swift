@@ -1,27 +1,19 @@
 //
-//  CourseManager.swift
+//  CourseTest.swift
 //  myScore
 //
-//  Created by Frank on 21.07.14.
+//  Created by von Eitzen Frank on 29.07.14.
 //  Copyright (c) 2014 Frank von Eitzen. All rights reserved.
 //
-import UIKit
-import CoreData
 
-var manager = CourseManager()
+import XCTest
 
-struct CourseManager {
+class CourseTest: XCTestCase {
     
-    var context:NSManagedObjectContext!
-    
-    init() {
-        var appDel = (UIApplication.sharedApplication().delegate as AppDelegate)
-        self.context = appDel.managedObjectContext
-    }
-    
-    func getCourseByName(name: String) -> Course {
-        
-        
+    var course:Course!
+
+    override func setUp() {
+        super.setUp()
         var holes = [
             Hole(number: 1, par: 3, length: 100, average:4),
             Hole(number: 2, par: 4, length: 250, average:5),
@@ -33,10 +25,15 @@ struct CourseManager {
             Hole(number: 8, par: 3, length: 120, average:4),
             Hole(number: 9, par: 3, length: 103, average:4)
         ]
-        var current = Course(name: "Ebersberg Sepp Maier", holes: holes)
-        
-        return current
-        
+        self.course = Course(name:"Testkurs", holes:holes)    }
+    
+    override func tearDown() {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
+    }
+
+    func testCourseAverage() {
+        XCTAssert(course.average == 41, "Pass")
     }
 
 }

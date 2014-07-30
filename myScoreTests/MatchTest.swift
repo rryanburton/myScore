@@ -37,6 +37,12 @@ class MatchTests: XCTestCase {
         super.tearDown()
     }
     
+    func initHolesWithAverageScore() {
+        for hole in course.holes {
+            hole.score.strokes = hole.average
+        }
+    }
+    
     func testTotalScore() {
         
         let match = Match(course: self.course)
@@ -53,6 +59,66 @@ class MatchTests: XCTestCase {
         // so the total has to increase by 1
         XCTAssert(match.getTotalScore() == 10, "Pass")
         
+        
+    }
+    
+    func testTotalScoreInit() {
+        
+        // after initialization, the total score is 0
+        let match = Match(course: self.course)
+        XCTAssert(match.getTotalScore() == 0, "Pass")
+    }
+    
+    func testCalculatedAverageNoScores() {
+        
+        let match = Match(course: self.course)
+        XCTAssert(match.getCalculatedAverage() == 0, "Should be 0 but is \(match.getCalculatedAverage())")
+        
+    }
+    
+    func testCalculatedAverageScoreOnlyAverage() {
+        
+        initHolesWithAverageScore()
+        let match = Match(course: self.course)
+        
+        XCTAssert(match.getCalculatedAverage() == 0, "Should be 0 but is \(match.getCalculatedAverage())")
+        
+    }
+    
+    func testCalculatedAverageScoreBetterThanAverage() {
+        
+        initHolesWithAverageScore()
+        var currentHole = course.holes[3]
+        currentHole.score.strokes = currentHole.average - 1
+        let match = Match(course: self.course)
+        
+        XCTAssert(match.getCalculatedAverage() == -1, "Should be -1 but is \(match.getCalculatedAverage())")
+        
+    }
+    
+    func testCalculatedAverageScoreWorseThanAverage() {
+        
+        initHolesWithAverageScore()
+        var currentHole = course.holes[3]
+        currentHole.score.strokes = currentHole.average + 2
+        let match = Match(course: self.course)
+        
+        XCTAssert(match.getCalculatedAverage() == 1, "Should be 1 but is \(match.getCalculatedAverage())")
+        
+    }
+    
+    func testCalculatedAverageScoreOverallAverage() {
+        
+        initHolesWithAverageScore()
+        var badScore = course.holes[3]
+        badScore.score.strokes = badScore.average + 2
+        var goodScore1 = course.holes[4]
+        goodScore1.score.strokes = goodScore1.average - 1
+        var goodScore2 = course.holes[5]
+        goodScore2.score.strokes = goodScore2.average - 1
+        let match = Match(course: self.course)
+        
+        XCTAssert(match.getCalculatedAverage() == 0, "Should be 0 but is \(match.getCalculatedAverage())")
         
     }
     

@@ -11,7 +11,25 @@ struct Score {
     // Initialize score with 0
     
     var strokes:Int = 0
-    var putts:Int = 0
-    var penalties:Int = 0
+    
+    var putts:Int = 0 {
+    willSet {
+        if newValue >= strokes {
+            strokes = newValue + 1
+        }
+        if newValue >= (strokes + penalties) {
+            strokes = (newValue + penalties) + 1
+        }
+    }
+    }
+    
+    var penalties:Int = 0 {
+    willSet {
+        if newValue >= strokes {
+            strokes = newValue + 1
+        }
+    }
+    }
+
     
 }

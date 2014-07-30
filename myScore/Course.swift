@@ -10,10 +10,14 @@ class Course {
     
     var name:String
     var holes:[Hole]
+    var average = 0
     
     init(name: String, holes: [Hole]) {
         self.name = name
         self.holes = holes
+        for hole in holes {
+            average += hole.average
+        }
     }
     
     func getHoleByNumber(number:Int) -> Hole {
