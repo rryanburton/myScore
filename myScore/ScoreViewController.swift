@@ -14,9 +14,9 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak var lblPutts: UILabel!
     @IBOutlet weak var lblPenalty: UILabel!
     @IBOutlet weak var lblHole: UILabel!
-    @IBOutlet weak var lblPar: UILabel!
     @IBOutlet weak var lblTotal: UILabel!
     @IBOutlet weak var lblLength: UILabel!
+    @IBOutlet weak var lblPar: UILabel!
     
     @IBOutlet weak var stepperHits: UIStepper!
     @IBOutlet weak var stepperPutts: UIStepper!
@@ -51,8 +51,8 @@ class ScoreViewController: UIViewController {
         
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         updateScore()
     }
 
@@ -104,7 +104,7 @@ class ScoreViewController: UIViewController {
         }
         
         
-        //updateHitsColor()
+        updateHitsColor()
         updateTotalScore()
         
     }
