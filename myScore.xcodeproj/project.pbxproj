@@ -16,6 +16,12 @@
 		011CCF64197BEF7F0031EB86 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011CCF63197BEF7F0031EB86 /* ScoreViewController.swift */; };
 		011CCF67197BEF7F0031EB86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 011CCF65197BEF7F0031EB86 /* Main.storyboard */; };
 		011CCF69197BEF7F0031EB86 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 011CCF68197BEF7F0031EB86 /* Images.xcassets */; };
+		017EFCC61997C384000C3950 /* ScrollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017EFCC51997C384000C3950 /* ScrollingViewController.swift */; };
+		01BA1407198D3C26009E4760 /* Hole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01163AFB197D9F6D00FBD423 /* Hole.swift */; };
+		01BA1408198D3C26009E4760 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01163AFD197DA16F00FBD423 /* Course.swift */; };
+		01BA1409198D3C26009E4760 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CCEFA197ED43E00B94FB4 /* Score.swift */; };
+		01BA140A198D3C26009E4760 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6D1E101980DEF200D53EC7 /* Match.swift */; };
+		01BA140C198D769E009E4760 /* CourseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BA140B198D769E009E4760 /* CourseTest.swift */; };
 		8F6CCEFB197ED43E00B94FB4 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CCEFA197ED43E00B94FB4 /* Score.swift */; };
 		8F6D1E111980DEF200D53EC7 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6D1E101980DEF200D53EC7 /* Match.swift */; };
 		8F6D1E131981724900D53EC7 /* MatchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6D1E121981724900D53EC7 /* MatchTest.swift */; };
@@ -30,6 +36,13 @@
 			remoteInfo = myScore;
 		};
 		01BA1403198AC650009E4760 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 011CCF51197BEF7E0031EB86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 011CCF58197BEF7F0031EB86;
+			remoteInfo = myScore;
+		};
+		01BA1405198AC650009E4760 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 011CCF51197BEF7E0031EB86 /* Project object */;
 			proxyType = 1;
@@ -66,6 +79,8 @@
 		011CCF68197BEF7F0031EB86 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		011CCF6E197BEF7F0031EB86 /* myScoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myScoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		011CCF73197BEF7F0031EB86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		017EFCC51997C384000C3950 /* ScrollingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingViewController.swift; sourceTree = "<group>"; };
+		01BA140B198D769E009E4760 /* CourseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTest.swift; sourceTree = "<group>"; };
 		8F6CCEFA197ED43E00B94FB4 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		8F6D1E101980DEF200D53EC7 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		8F6D1E121981724900D53EC7 /* MatchTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchTest.swift; sourceTree = "<group>"; };
@@ -130,6 +145,7 @@
 				011CCF5C197BEF7F0031EB86 /* Supporting Files */,
 				01163B01197DA7B500FBD423 /* Model */,
 				01163AFF197DA1DC00FBD423 /* CourseManager.swift */,
+				017EFCC51997C384000C3950 /* ScrollingViewController.swift */,
 			);
 			path = myScore;
 			sourceTree = "<group>";
@@ -145,6 +161,7 @@
 		011CCF71197BEF7F0031EB86 /* myScoreTests */ = {
 			isa = PBXGroup;
 			children = (
+				01BA140B198D769E009E4760 /* CourseTest.swift */,
 				8F6D1E121981724900D53EC7 /* MatchTest.swift */,
 				011CCF72197BEF7F0031EB86 /* Supporting Files */,
 			);
@@ -194,6 +211,7 @@
 				8F6D1E1519817DA700D53EC7 /* PBXTargetDependency */,
 				8F4DB9991988078F0004E016 /* PBXTargetDependency */,
 				01BA1404198AC650009E4760 /* PBXTargetDependency */,
+				01BA1406198AC650009E4760 /* PBXTargetDependency */,
 			);
 			name = myScoreTests;
 			productName = myScoreTests;
@@ -266,6 +284,7 @@
 				011CCF64197BEF7F0031EB86 /* ScoreViewController.swift in Sources */,
 				8F6D1E111980DEF200D53EC7 /* Match.swift in Sources */,
 				01163AFA197C68B300FBD423 /* ScorePageViewController.swift in Sources */,
+				017EFCC61997C384000C3950 /* ScrollingViewController.swift in Sources */,
 				01163AFC197D9F6D00FBD423 /* Hole.swift in Sources */,
 				01163B00197DA1DC00FBD423 /* CourseManager.swift in Sources */,
 				011CCF62197BEF7F0031EB86 /* myScore.xcdatamodeld in Sources */,
@@ -278,6 +297,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01BA140C198D769E009E4760 /* CourseTest.swift in Sources */,
+				01BA1407198D3C26009E4760 /* Hole.swift in Sources */,
+				01BA1408198D3C26009E4760 /* Course.swift in Sources */,
+				01BA1409198D3C26009E4760 /* Score.swift in Sources */,
+				01BA140A198D3C26009E4760 /* Match.swift in Sources */,
 				8F6D1E131981724900D53EC7 /* MatchTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +318,11 @@
 			isa = PBXTargetDependency;
 			target = 011CCF58197BEF7F0031EB86 /* myScore */;
 			targetProxy = 01BA1403198AC650009E4760 /* PBXContainerItemProxy */;
+		};
+		01BA1406198AC650009E4760 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 011CCF58197BEF7F0031EB86 /* myScore */;
+			targetProxy = 01BA1405198AC650009E4760 /* PBXContainerItemProxy */;
 		};
 		8F4DB9991988078F0004E016 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

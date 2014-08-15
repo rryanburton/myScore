@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.11" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="PVC-Vq-Isu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="PVC-Vq-Isu">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6190.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
     </dependencies>
     <scenes>
         <!--Golfplätze-->
@@ -58,7 +58,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="bDG-iq-8l5" kind="push" id="67I-Oq-3rf"/>
+                                            <segue destination="IzX-f3-dJS" kind="push" id="xmY-q4-Z0c"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -85,6 +85,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efB-cm-OUA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="239" y="166"/>
+        </scene>
+        <!--Scrolling View Controller-->
+        <scene sceneID="23i-yx-2hz">
+            <objects>
+                <viewController id="IzX-f3-dJS" customClass="ScrollingViewController" customModule="myScore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MbT-Kk-kIP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" id="bfC-Gr-FXg">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="513"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="IzX-f3-dJS" id="1Mj-ve-TIs"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="Rtq-Mv-C0D">
+                                <rect key="frame" x="141" y="516" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1uh-Rt-8tf"/>
+                    <connections>
+                        <outlet property="scrollView" destination="bfC-Gr-FXg" id="0xr-DM-LmN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aml-Vr-3Pg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="239" y="890"/>
         </scene>
         <!--Score View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -247,7 +278,4 @@
             <size key="landscapeSize" width="568" height="320"/>
         </simulatedScreenMetrics>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="67I-Oq-3rf"/>
-    </inferredMetricsTieBreakers>
 </document>
