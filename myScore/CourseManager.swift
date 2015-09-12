@@ -15,7 +15,7 @@ struct CourseManager {
     var context:NSManagedObjectContext!
     
     init() {
-        var appDel = (UIApplication.sharedApplication().delegate as AppDelegate)
+        var appDel = (UIApplication.sharedApplication().delegate as! AppDelegate)
         //self.context = appDel.managedObjectContext
     }
     

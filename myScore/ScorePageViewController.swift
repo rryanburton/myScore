@@ -18,14 +18,14 @@ class ScorePageViewController: UIPageViewController, UIPageViewControllerDataSou
         self.dataSource = self
         
         var viewControllers = [viewControllerAtIndex(1)] as NSArray
-        setViewControllers(viewControllers, direction: .Forward, animated: false, completion: nil)
+        setViewControllers(viewControllers as [AnyObject], direction: .Forward, animated: false, completion: nil)
 
         
     }
     
-    func pageViewController(pageViewController: UIPageViewController!, viewControllerBeforeViewController viewController: UIViewController!) -> UIViewController! {
+    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         
-        var before = viewController as ScoreViewController
+        var before = viewController as! ScoreViewController
         var currentController: ScoreViewController?
         if (before.hole.number > 1) {
             var current = before.hole.number - 1
@@ -35,9 +35,9 @@ class ScorePageViewController: UIPageViewController, UIPageViewControllerDataSou
         
     }
     
-    func pageViewController(pageViewController: UIPageViewController!, viewControllerAfterViewController viewController: UIViewController!) -> UIViewController! {
+    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         
-        var after = viewController as ScoreViewController
+        var after = viewController as! ScoreViewController
         var currentController: ScoreViewController?
         if (after.hole.number < match.course.getNumberOfHoles()) {
             var current = after.hole.number + 1
@@ -46,18 +46,18 @@ class ScorePageViewController: UIPageViewController, UIPageViewControllerDataSou
         return currentController
     }
     
-    func presentationCountForPageViewController(pageViewController: UIPageViewController!) -> Int {
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
        return match.course.getNumberOfHoles()
     }
     
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController!) -> Int {
-        var currentController = pageViewController.viewControllers[0] as ScoreViewController
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+        var currentController = pageViewController.viewControllers[0] as! ScoreViewController
         return currentController.hole.number - 1
     }
     
     func viewControllerAtIndex(index: Int) -> ScoreViewController {
         
-        var currentController = self.storyboard.instantiateViewControllerWithIdentifier("scoreViewController") as ScoreViewController
+        var currentController = self.storyboard!.instantiateViewControllerWithIdentifier("scoreViewController") as! ScoreViewController
         currentController.hole = match.course.getHoleByNumber(index)
         currentController.match = match
         return currentController

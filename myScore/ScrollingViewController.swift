@@ -18,7 +18,7 @@ class ScrollingViewController: UIViewController,UIScrollViewDelegate {
         super.viewDidLoad()
         self.scrollView.contentSize = CGSizeMake(1000,1000)
         
-        var currentController = self.storyboard.instantiateViewControllerWithIdentifier("scoreViewController") as ScoreViewController
+        var currentController = self.storyboard!.instantiateViewControllerWithIdentifier("scoreViewController") as!ScoreViewController
         self.addChildViewController(currentController)
         currentController.didMoveToParentViewController(self)
         currentController.hole = match.course.getHoleByNumber(1)
@@ -31,11 +31,7 @@ class ScrollingViewController: UIViewController,UIScrollViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    func scrollViewDidScroll(scrollView: UIScrollView!) {
-        println("scrollViewDidScroll")
-    }
+
 
     /*
     // MARK: - Navigation

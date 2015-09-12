@@ -11,6 +11,10 @@
       "idiom" : "universal",
       "scale" : "2x",
       "filename" : "Arrow_Same.png"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
